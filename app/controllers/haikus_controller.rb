@@ -1,0 +1,2 @@
+class HaikusController < ApplicationController
+end

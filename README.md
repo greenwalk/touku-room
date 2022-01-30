@@ -1,24 +1,72 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## usersテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| email              | string     | null: false, unique: true      |
+| encrypted_password | string     | null: false                    |
+| name               | string     | null: false                    |
+| profile            | text       |                                |
 
-Things you may want to cover:
 
-* Ruby version
+### Association
+- has_many :haikus
+- has_many :themes
+- has_many :votes
+- has_many :comments
 
-* System dependencies
+## themesテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| season_id          | integer    | null: false                    |
+| status             | integer    | null: false                    |
+| user               | reference  | null: false, foreign_key: true |
 
-* Configuration
+### Association
+- belongs_to :user
+- has_one :field
 
-* Database creation
+## fieldsテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| status             | integer    | null: false                    |
+| theme              | references | null: false, foreign_key: true |
 
-* Database initialization
+### Association
+- has_many :haikus
+- belongs_to :theme
 
-* How to run the test suite
+## haikusテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| content            | string     | null: false                    |
+| content_sub        | string     | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| field              | references | null: false, foreign_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Association
+- belongs_to :user
+- belongs_to :field
+- has_many :votes
+- has_many :comments
 
-* Deployment instructions
+## votesテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| user               | references | null: false, foreign_key: true |
+| haiku              | references | null: false, foreign_key: true |
 
-* ...
+### Association
+- belongs_to :user
+- belongs_to :haiku
+
+## commentsテーブル
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| content            | text       | null: false                    |
+| user               | references | null: false, foreign_key: true |
+| haiku              | references | null: false, foreign_key: true |
+
+### Association
+- belongs_to :user
+- belongs_to :haiku

@@ -1,7 +1,12 @@
 class ThemesController < ApplicationController
 
   def new
-    @theme = Theme.new
+    if Theme.exists?(status: 0)
+      themes = current_user.themes
+      @theme = themes[-1]
+    else
+      @theme = Theme.new
+    end
   end
 
   def create
@@ -16,7 +21,7 @@ class ThemesController < ApplicationController
   private
 
   def theme_params
-    params.require(:theme).permit(:season_id, :image).merge(user_id: current_user.id)
+    params.require(:theme).permit(:season_id, :status, :image).merge(user_id: current_user.id)
   end
 
 end

@@ -1,0 +1,32 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <% if Theme.exists?(status: 0) %>
+        <h2 class="page-heading">設定中のお題</h2>
+          <div class="card">
+            <%= image_tag @theme.image, class: :card__img %>
+            <div class="card__body">
+              <%= "季節 : #{@theme.season.name}" %>
+            </div>
+          </div>
+      <% else %>
+        <h2 class="page-heading">お題の設定</h2>
+          <%= form_with model: @theme, url:themes_path, local: true do |f|%>
+            <div class="field">
+              <%= f.label :season_id, "お題の季節" %><br />
+              <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"select-box", id:"theme-season"}) %>
+            </div>
+
+            <div class="field">
+              <%= f.label :image, "お題の画像" %><br />
+              <%= f.file_field :image, id:"prototype_image" %>
+            </div>
+
+            <div class="actions">
+              <%= f.submit "設定する", class: :form__btn  %>
+            </div>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

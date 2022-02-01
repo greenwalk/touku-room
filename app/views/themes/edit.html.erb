@@ -1,0 +1,21 @@
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">お題の編集</h2>
+        <%= form_with model: @theme, url:theme_path(@theme.id), local: true do |f|%>
+          <div class="field">
+            <%= f.label :season_id, "お題の季節" %><br />
+            <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"select-box", id:"theme-season"}) %>
+          </div>
+          <div class="field">
+            <%= f.label :image, "お題の画像" %><br />
+            <%= f.file_field :image, id:"prototype_image" %>
+          </div>
+          <div class="actions">
+            <%= f.submit "設定する", class: :form__btn  %>
+            <%= link_to "キャンセル", root_path, class: :nav__btn %> 
+          </div>
+        <% end %>
+    </div>
+  </div>
+</div>

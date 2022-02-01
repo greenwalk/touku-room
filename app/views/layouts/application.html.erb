@@ -20,6 +20,7 @@
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %> 
             <div class="nav__right">
+              <%= link_to "お題を設定", new_theme_path, class: :nav__btn %> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %> 
               <%= link_to "投句する", root_path, class: :nav__btn %> 
             </div>

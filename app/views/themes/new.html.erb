@@ -9,6 +9,9 @@
               <%= "季節 : #{@theme.season.name}" %>
             </div>
           </div>
+          <div class="actions">
+            <%= link_to "お題の変更", edit_theme_path(@theme.id), class: :nav__btn %> 
+          </div>
       <% else %>
         <h2 class="page-heading">お題の設定</h2>
           <%= form_with model: @theme, url:themes_path, local: true do |f|%>

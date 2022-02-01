@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   resources :users, only: [:edit, :update, :show]
   get '/users', to: 'haikus#index'
   resources :haikus, only: [:index]
-  resources :themes, only: [:new, :create]
+  resources :themes, only: [:new, :create, :edit, :update]
 end

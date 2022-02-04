@@ -4,9 +4,9 @@ class ThemesController < ApplicationController
   before_action :move_to_top, only: [:edit]
 
   def new
-    if Theme.exists?(status: 0)
-      themes = current_user.themes
-      @theme = themes[-1]
+    themes = current_user.themes.where(status: "set")
+    if themes.exists?
+      @theme = themes.order(updated_at: :desc)[-1]
     else
       @theme = Theme.new
     end

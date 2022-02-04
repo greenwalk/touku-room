@@ -1,7 +1,7 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      <% if Theme.exists?(status: 0) %>
+      <% if Theme.exists?(status: "set") %>
         <h2 class="page-heading">設定中のお題</h2>
           <div class="card">
             <%= image_tag @theme.image, class: :card__img %>

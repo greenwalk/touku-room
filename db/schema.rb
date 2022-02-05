@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_04_031338) do
+ActiveRecord::Schema.define(version: 2022_02_05_052553) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -41,6 +41,17 @@ ActiveRecord::Schema.define(version: 2022_02_04_031338) do
     t.index ["theme_id"], name: "index_fields_on_theme_id"
   end
 
+  create_table "haikus", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "content", null: false
+    t.string "content_sub", null: false
+    t.bigint "user_id", null: false
+    t.bigint "field_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["field_id"], name: "index_haikus_on_field_id"
+    t.index ["user_id"], name: "index_haikus_on_user_id"
+  end
+
   create_table "themes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "season_id", null: false
     t.integer "status", default: 0, null: false
@@ -66,5 +77,7 @@ ActiveRecord::Schema.define(version: 2022_02_04_031338) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "fields", "themes"
+  add_foreign_key "haikus", "fields"
+  add_foreign_key "haikus", "users"
   add_foreign_key "themes", "users"
 end

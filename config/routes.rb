@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'haikus#index'
+  root to: 'fields#index'
   resources :users, only: [:edit, :update, :show]
   get '/users', to: 'haikus#index'
-  resources :haikus, only: [:index, :new, :create]
-  resources :themes, only: [:new, :create, :edit, :update]
+  resources :themes, only: [:new, :create, :edit, :update] 
+  resources :fields, only: [:index, :show] do
+    resources :haikus, only: [:new, :create, :edit, :update]
+  end
 end

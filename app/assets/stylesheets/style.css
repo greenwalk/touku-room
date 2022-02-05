@@ -86,6 +86,10 @@ a {
   min-height: calc(100vh - 161px);
 }
 
+.form__haiku {
+  width: 350px;
+}
+
 .form__text {
   width: 50%;
 }
@@ -137,7 +141,6 @@ a {
   margin-bottom: 28px;
 }
 .card__wrapper {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -148,7 +151,6 @@ a {
   margin-bottom: 40px;
 }
 .card__img {
-  margin-bottom: 16px;
 }
 .card__title {
   display: block;

@@ -1,0 +1,8 @@
+<div class="card">
+  <%= link_to "第#{field.id}回", "#", class: :card__title %>
+  <%= link_to image_tag(field.theme.image, class: :card__img ), "#" %>
+  <div class="card__body">
+    <%= "季節 : #{field.theme.season.name}" %>
+    <%= link_to "by #{field.theme.user.name}", user_path(field.theme.user_id), class: :card__user %>
+  </div>
+</div>

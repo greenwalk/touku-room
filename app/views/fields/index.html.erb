@@ -9,9 +9,17 @@
       </div>
     <% end %>
     <%# // ログインしているときは上記を表示する %>
+
+    <div class="main_field_wrapper">
+      <%= render partial: 'field', locals: { field: @field } %>
+      <% if @field.status == "touku" %>
+        <%= link_to "投句する", "/fields/#{@field.id}/haikus/new", class: :nav__btn %> 
+      <% elsif @field.status == "voting" %>
+        <%= link_to "投票する", "#", class: :nav__btn %>
+      <% end %>
+    </div>
     <div class="card__wrapper">
-      <%# 投稿機能実装後、部分テンプレートでプロトタイプ投稿一覧を表示する %>
-      <%# <%= render partial: 'prototype', collection: @prototypes %> 
+      <%= render partial: 'field', collection: @fields %> 
     </div>
   </div>
 </main>

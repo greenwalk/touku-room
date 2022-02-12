@@ -3,6 +3,7 @@ class HaikusController < ApplicationController
   before_action :field_set, only: [:new, :create, :edit, :update]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_top, only: [:edit]
+  before_action :move_to_theme, only: [:new]
 
   def new
     if Haiku.exists?(user_id: current_user.id, field_id: @field.id)
@@ -50,6 +51,12 @@ class HaikusController < ApplicationController
   def move_to_top
     unless current_user.id == @haiku.user_id
       redirect_to root_path
+    end
+  end
+
+  def move_to_theme
+    unless Theme.exists?(user_id: current_user.id, status: "set")
+      redirect_to new_theme_path
     end
   end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_05_052553) do
+ActiveRecord::Schema.define(version: 2022_02_12_083445) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -75,9 +75,20 @@ ActiveRecord::Schema.define(version: 2022_02_05_052553) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "votes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "haiku_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["haiku_id"], name: "index_votes_on_haiku_id"
+    t.index ["user_id"], name: "index_votes_on_user_id"
+  end
+
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "fields", "themes"
   add_foreign_key "haikus", "fields"
   add_foreign_key "haikus", "users"
   add_foreign_key "themes", "users"
+  add_foreign_key "votes", "haikus"
+  add_foreign_key "votes", "users"
 end

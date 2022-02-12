@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/users', to: 'haikus#index'
   resources :themes, only: [:new, :create, :edit, :update] 
   resources :fields, only: [:index, :show] do
-    resources :haikus, only: [:new, :create, :edit, :update]
+    resources :haikus, only: [:new, :create, :edit, :update] do
+      resources :votes, only: [:create, :destroy]
+    end
   end
 end

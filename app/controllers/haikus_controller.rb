@@ -3,10 +3,12 @@ class HaikusController < ApplicationController
   before_action :field_set, only: [:new, :create, :edit, :update]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_top, only: [:edit]
-  before_action :move_to_edit, only: [:new]
 
   def new
-    unless Haiku.exists?(user_id: current_user.id, field_id: @field.id)
+    if Haiku.exists?(user_id: current_user.id, field_id: @field.id)
+      @haiku = @field.haikus.where(user_id: current_user.id)[0]
+      redirect_to "/fields/#{@haiku.field.id}/haikus/#{@haiku.id}/edit"
+    else
       @haiku = Haiku.new
     end
   end
@@ -48,12 +50,6 @@ class HaikusController < ApplicationController
   def move_to_top
     unless current_user.id == @haiku.user_id
       redirect_to root_path
-    end
-  end
-
-  def move_to_edit
-    if Haiku.exists?(user_id: current_user.id, field_id: @field.id)
-      redirect_to "/fields/#{@haiku.field.id}/haikus/#{@haiku.id}/edit"
     end
   end
 

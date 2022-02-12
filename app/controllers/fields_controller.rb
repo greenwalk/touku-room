@@ -4,7 +4,7 @@ class FieldsController < ApplicationController
   def index
     if Field.exists?(status: "touku")
       fields = Field.where(status: "touku")
-    elsif Field.exist?(status: "voting")
+    elsif Field.exists?(status: "voting")
       fields = Field.where(status: "voting")
     end
     @field = fields.order(updated_at: :desc)[0]

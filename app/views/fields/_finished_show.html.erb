@@ -1,6 +1,14 @@
-<div class="card">
-  <div class="card__body">
-    <%= haiku.content %>
-    <%= link_to haiku.user.name, "#", class: :card__user %>
+<div class="vote">
+  <div class="haiku__result">
+    <div class="haiku__rank">
+        <%= "#{haiku_counter + 1}位" %>
+    </div>
+    <div class="haiku__points">
+        <%= "#{haiku.votes.count}点" %>
+    </div>
+  </div>
+  <div class="haiku__body">
+    <%= link_to haiku.user.name, "#", class: :finished__user %>
+    <div class="result__haiku"><%= haiku.content %></div>
   </div>
 </div>

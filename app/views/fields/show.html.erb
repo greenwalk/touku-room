@@ -1,0 +1,5 @@
+<% if @field.status == "voting" %>
+  <%= render partial: 'voting_show', collection: @haikus, as: 'haiku' %>
+<% elsif @field.status == "finished" %>
+  <%= render partial: 'finished_show', collection: @haikus, as: 'haiku' %>
+<% end%>

@@ -1,0 +1,16 @@
+<div class="card">
+  <h2 class="page-heading"><%= "現在のお題" %></h2>
+    <%= link_to "#{@field.theme.user.name}様より出題", user_path(@field.theme.user_id), class: :card__user %>
+    <%= link_to image_tag(@field.theme.image, class: :card__img ), "#" %>
+    <div class="card__body">
+      <h3><%= "季節 : #{@field.theme.season.name}" %></h3>
+    </div>
+</div>
+
+<div class="haiku__wrapper">
+  <% if Haiku.exists?(user_id: current_user.id, field_id: @field.id) %>
+    <h2 class="page-heading"><%= "現在の俳句 : #{@haiku.content} (#{@haiku.content_sub})" %></h2>
+  <% else %>
+    <h2 class="page-heading"><%= "現在の俳句 : 投句されていません" %></h2>
+  <% end%>
+</div>

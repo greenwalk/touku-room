@@ -1,14 +1,7 @@
 <div class="main">
   <div class="inner">
     <%# 現在のお題を表示 %>
-    <div class="card">
-      <h2 class="page-heading"><%= "現在のお題" %></h2>
-        <%= link_to "#{@field.theme.user.name}様より出題", user_path(@field.theme.user_id), class: :card__user %>
-        <%= link_to image_tag(@field.theme.image, class: :card__img ), "#" %>
-        <div class="card__body">
-          <h3><%= "季節 : #{@field.theme.season.name}" %></h3>
-        </div>
-    </div>
+    <%= render 'shared/theme_card' %>
     <%# 俳句の投稿フォーム %>
     <div class="form__wrapper">
       <h2 class="page-heading"><%= "俳句を作る" %></h2>

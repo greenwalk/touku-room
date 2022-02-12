@@ -1,8 +1,12 @@
 <div class="card">
-  <%= link_to "第#{field.id}回", "#", class: :card__title %>
-  <%= link_to image_tag(field.theme.image, class: :card__img ), "#" %>
+  <% if field.status == "finished" %>
+    <%= link_to "第#{field.id}回", field_path(field.id), class: :card__title %>
+  <% else %>
+    <h2 class="page-heading"><%= "現在のお題" %></h2>
+  <% end %>
+  <%= link_to image_tag(field.theme.image, class: :card__img ), field_path(field.id) %>
   <div class="card__body">
     <%= "季節 : #{field.theme.season.name}" %>
-    <%= link_to "by #{field.theme.user.name}", user_path(field.theme.user_id), class: :card__user %>
+    <%= link_to "出題 : #{field.theme.user.name} 様", user_path(field.theme.user_id), class: :card__user %>
   </div>
 </div>

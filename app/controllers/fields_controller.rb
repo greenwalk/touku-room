@@ -12,7 +12,13 @@ class FieldsController < ApplicationController
   end
 
   def show
-    @haikus = @field.haikus.shuffle
+    if @field.status == "voting"
+      @haikus = @field.haikus.shuffle
+    elsif @field.status == "finished"
+      @haikus = @field.haikus.sort {|a,b| b.votes.size <=> a.votes.size}
+    else
+      redirect_to root_path
+    end
   end
 
   private

@@ -254,6 +254,29 @@ a {
   margin: 0 10px;
 }
 
+/* 結果ページ */
+.haiku__result {
+  margin-top: 17.5px;
+  display: flex;
+}
+.haiku__rank{
+  color: red;
+  margin: 0 10px;
+}
+.haiku__points{
+  margin-right: 10px;
+}
+.finished__user {
+  display: block;
+  font-size: 12px;
+  color: #999;
+  text-align: left;
+  text-decoration: underline;
+}
+.haiku__body{
+  margin-bottom: 15px;
+}
+
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);

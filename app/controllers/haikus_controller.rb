@@ -4,8 +4,10 @@ class HaikusController < ApplicationController
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_top, only: [:edit]
   before_action :move_to_theme, only: [:new]
+  before_action :now_field, only: [:new, :create, :edit, :update]
 
   def new
+    # 俳句を既に投稿している場合は、俳句編集ページへ移動。していない場合は、投句ページへ移動
     if Haiku.exists?(user_id: current_user.id, field_id: @field.id)
       @haiku = @field.haikus.where(user_id: current_user.id)[0]
       redirect_to "/fields/#{@haiku.field.id}/haikus/#{@haiku.id}/edit"
@@ -57,6 +59,12 @@ class HaikusController < ApplicationController
   def move_to_theme
     unless Theme.exists?(user_id: current_user.id, status: "set")
       redirect_to new_theme_path
+    end
+  end
+
+  def now_field
+    unless @field.status == "touku"
+      redirect_to root_path
     end
   end
 

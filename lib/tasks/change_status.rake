@@ -3,7 +3,7 @@ namespace :change_status do
   desc "Create a New Field."
   task create_new_field: :environment do
 
-    logger = Logger.new 'log/create_new_field.log'
+    logger = Logger.new 'log/cron.log'
 
     # "終わったFieldを取得"
     fields = Field.where(status: "voting")
@@ -24,7 +24,7 @@ namespace :change_status do
   desc "Change the field's status from touku to voting."
   task chage_field_status: :environment do
 
-    logger = Logger.new 'log/change_field_status.log'
+    logger = Logger.new 'log/cron.log'
 
     fields = Field.where(status: "touku")
     touku_field = fields.order(updated_at: :desc)[-1]

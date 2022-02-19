@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: [:edit]
   before_action :move_to_index, only: [:edit, :update]
 
   def edit
@@ -13,6 +14,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @haikus = Haiku.includes(field: :theme).where(user_id: @user.id)
   end
 
   private

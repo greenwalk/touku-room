@@ -1,0 +1,10 @@
+<% if haiku.field.status == "finished" %>
+  <div class="card">
+    <%= link_to "第#{haiku.field.id}回", field_path(haiku.field.id), class: :card__title %>
+    <%= link_to image_tag(haiku.field.theme.image, class: :card__img ), field_path(haiku.field.id) %>
+    <div class="card__body">
+      <%= "季節 : #{haiku.field.theme.season.name}" %>
+      <%= link_to "出題 : #{haiku.field.theme.user.name} 様", user_path(haiku.field.theme.user_id), class: :card__user %>
+    </div>
+  </div>
+<% end %>

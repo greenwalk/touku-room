@@ -1,0 +1,37 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "ユーザー情報" %>
+        <% if @user.id == current_user.id%>
+          <%= link_to "プロフィールを編集", edit_user_path(@user.id), class: :nav__btn %>
+        <% end%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">俳号</th>
+            <td class="table__col2"><%= @user.name %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">プロフィール</th>
+            <td class="table__col2"><%= @user.profile %></td>
+          </tr>
+          <% if @user.id == current_user.id%>
+            <tr>
+              <th class="table__col1">メールアドレス</th>
+              <td class="table__col2"><%= @user.email %></td>
+            </tr>
+          <% end%>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
+        <%= "#{@user.name} 様の作品"%>
+      </h2>
+      <div class="user__card">
+        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
+        <%= render partial: 'field', collection: @haikus, as: 'haiku'%>
+      </div>
+    </div>
+  </div>
+</div>

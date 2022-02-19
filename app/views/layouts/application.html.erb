@@ -20,6 +20,7 @@
           <%# ログインしているときは以下を表示するようにしましょう %>
           <% if user_signed_in? %> 
             <div class="nav__right">
+              <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %> 
               <%= link_to "お題を設定", new_theme_path, class: :nav__btn %> 
               <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %> 
             </div>
@@ -35,7 +36,9 @@
         </div>
       </div>
     </header>
-    <%= yield %>
+    <div class="content__body">
+      <%= yield %>
+    </div>
     <footer class="footer">
       <p class="copyright">Copyright © TOUKU ROOM All rights reserved.</p>
     </footer>

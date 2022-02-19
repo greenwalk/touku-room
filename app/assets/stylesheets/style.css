@@ -34,12 +34,17 @@ a {
   color: #3b4043;
 }
 
+.content__body {
+  padding-top: 87.45px;
+}
+
 /* ヘッダー */
 
 .header {
-  background-color: #ffffff;
-  padding: 20px 0;
-
+  position:fixed;
+  background-color: #FFFFFF;
+  width: 100%;
+  padding: 15px 0;
 }
 .inner {
   width: 1024px;
@@ -57,23 +62,23 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #F6B894;
   text-decoration: none;
   user-select: none;
-  border: 1px #87CEFA solid;
+  border: 1px #F6B894 solid;
   border-radius: 3px;
   transition: 0.4s ease;
 }
 .nav__btn:hover{
   color: #fff;
-  background: #87CEFA;
+  background: #F6B894;
 }
 
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #87CEFA;
+  color: #F6B894;
   text-decoration: none;
   user-select: none;
 }
@@ -116,8 +121,8 @@ a {
   color: #fff;
   text-decoration: none;
   user-select: none;
-  background: #87CEFA;
-  border: 1px #87CEFA solid;
+  background: #F6B894;
+  border: 1px #F6B894 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -284,7 +289,7 @@ a {
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
-  width: 50%;
+  width: 60%;
 }
 .table__col1{
   text-align: left;
@@ -303,7 +308,6 @@ a {
   padding: 16px 8px;
 }
 .user__card {
-  display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;

@@ -26,6 +26,25 @@
         </tbody>
       </table>
       <h2 class="page-heading">
+        <%= "#{@user.name} 様の成績"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">投句数</th>
+            <td class="table__col2"><%= @haikus.size %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">総得票数</th>
+            <td class="table__col2"><%= @total_votes %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">得票率</th>
+            <td class="table__col2"><%= @votes_rate %></td>
+          </tr>
+        </tbody>
+      </table>
+      <h2 class="page-heading">
         <%= "#{@user.name} 様の作品"%>
       </h2>
       <div class="user__card">

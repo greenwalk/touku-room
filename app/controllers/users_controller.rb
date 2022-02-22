@@ -15,7 +15,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @haikus = Haiku.includes(field: :theme).where(user_id: @user.id)
+    @haikus = Haiku.includes({user: :votes}, {field: :theme}).where(user_id: @user.id)
+    votes_count(@haikus)
+    @votes_rate = sprintf("%.3f",(@total_votes.to_f / @total_votes_num).floor(3))
   end
 
   private
@@ -27,5 +29,19 @@ class UsersController < ApplicationController
   def move_to_index
     @user = User.find(params[:id])
     redirect_to root_path unless current_user.id == @user.id
+  end
+
+  def votes_count(haikus)
+    @total_votes = 0
+    @total_votes_num = 0
+    haikus.each do |haiku|
+      votes_ary = []
+      haiku.field.haikus.each do |haiku2|
+        votes_ary << haiku2.votes.pluck(:user_id)
+      end
+      votes_num = votes_ary.flatten.uniq.size
+      @total_votes_num += votes_num
+      @total_votes += haiku.votes.size
+    end
   end
 end

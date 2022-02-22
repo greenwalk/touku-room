@@ -2,11 +2,6 @@
   <div class="inner">
     <div class="main_field_wrapper">
       <%= render partial: 'field', locals: { field: @field } %>
-      <% if @field.status == "touku" %>
-        <%= link_to "投句する", "/fields/#{@field.id}/haikus/new", class: :nav__btn %> 
-      <% elsif @field.status == "voting" %>
-        <%= link_to "投票する", field_path(@field.id), class: :nav__btn %>
-      <% end %>
     </div>
     <div class="card__wrapper">
       <%= render partial: 'field', collection: @fields %> 

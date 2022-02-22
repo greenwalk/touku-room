@@ -11,4 +11,9 @@
     <%= "季節 : #{field.theme.season.name}" %>
     <%= link_to "出題 : #{field.theme.user.name} 様", user_path(field.theme.user_id), class: :card__user %>
   </div>
+  <% if field.status == "touku" %>
+    <%= link_to "投句する", "/fields/#{@field.id}/haikus/new", class: :touku___vote__btn %> 
+  <% elsif field.status == "voting" %>
+    <%= link_to "投票する", field_path(@field.id), class: :touku___vote__btn %>
+  <% end %>
 </div>

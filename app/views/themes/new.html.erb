@@ -1,6 +1,7 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
+      投句するには、お題を設定する必要があります。
       <% if Theme.exists?(user_id: current_user.id, status: "set") %>
         <h2 class="page-heading">設定中のお題</h2>
           <div class="card">

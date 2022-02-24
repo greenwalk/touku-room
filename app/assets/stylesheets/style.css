@@ -118,6 +118,10 @@ a {
   margin: 10px 0;
 }
 
+.haiku__wrapper {
+  margin-top: 30px;
+}
+
 .select-box {
   height: 30px;
   width: 110px;
@@ -133,11 +137,11 @@ a {
   display: inline-block;
   padding: 0.4em 1.6em;
   font-size: 0.8em;
-  color: #fff;
+  color: #EDF0AF;
   text-decoration: none;
   user-select: none;
-  background: #F6B894;
-  border: 1px #F6B894 solid;
+  background: #A574B0;
+  border: 1px #A574B0 solid;
   border-radius: 3px;
   box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 2px 0 rgba(0, 0, 0, 0.12);
   transition: 0.2s ease;
@@ -166,9 +170,7 @@ a {
   align-items: center;
   min-height: calc(100vh - 161px);
 }
-.main_field_wrapper {
-  /* padding: auto; */
-}
+
 .card {
   width: 90%;
   text-align: center;
@@ -186,6 +188,11 @@ a {
   margin-bottom: 8px;
   font-weight: bold;
 }
+.card__body {
+  margin-top: 10px;
+  font-size: 30px;
+	font-weight:bold;
+}
 .card__summary {
   font-size: 16px;
 }
@@ -200,7 +207,7 @@ a {
 .touku___vote__btn{
   display: inline-block;
   padding: 0.4em 1.6em;
-  font-size: 0.8em;
+  font-size: 1.6em;
   color: #EDF0AF;
   text-decoration: none;
   user-select: none;

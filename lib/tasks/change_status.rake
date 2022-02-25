@@ -12,7 +12,6 @@ namespace :change_status do
     top_haiku = finished_field.haikus.sort {|a,b| b.votes.size <=> a.votes.size}[0]
     top_user = top_haiku.user
     top_theme = top_user.themes[0]
-    binding.pry
     # "終わったFieldのステータスを変更"
     finished_field.update(status: "finished")
     # "新しいFieldを作成し、top_themeと紐づける"

@@ -1,5 +1,10 @@
 <main class="main">
   <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <%= "お待ちしておりました、#{current_user.name} 様" %>
+      </div>
+    <% end %>
     <div class="main_field_wrapper">
       <%= render partial: 'field', locals: { field: @field } %>
     </div>

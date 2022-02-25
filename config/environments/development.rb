@@ -36,6 +36,18 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # 開発環境でメール認証を受け取る
+  config.action_mailer.default_url_options = {  host: 'localhost', port: 3000 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:"smtp.gmail.com",
+    domain: 'gmail.com',
+    port:587,
+    user_name: ENV["GOOGLE_MAIL_ADDRES"],
+    password: ENV["GOOGLE_APP_PASSWORD"],
+    authentication: :login
+  }
+
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
 

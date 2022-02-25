@@ -1,5 +1,10 @@
-<p>Welcome <%= @email %>!</p>
+<p>ご登録ありがとうございます。 <%= @email %> 様</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>以下のリンクから、メールアドレスの認証を行うことができます。</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '「投句るうむ」でアカウントを認証する',
+            controller: 'devise/confirmations',
+            action: 'create',
+            confirmation_token: @token %></p>
+
+<p>※このメールに心当たりがない場合、一切の内容を無視してください。</p>

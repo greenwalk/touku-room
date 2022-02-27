@@ -1,12 +1,12 @@
 <%= form_with(model: [@field, @haiku], local: true) do |f| %>
   <div class="field">
     <%= f.label :content, "あなたの俳句" %><br />
-    <%= f.text_field :content, class: :form__haiku, id:"prototype_title", placeholder:"俳句を入力", maxlength:"25" %>
+    <%= f.text_field :content, class: :form__haiku, id:"haiku_title", placeholder:"俳句を入力", maxlength:"25" %>
   </div>
 
   <div class="field">
     <%= f.label :content_sub, "俳句のよみ" %><br />
-    <%= f.text_field :content_sub, class: :form__haiku, id:"prototype_catch_copy", placeholder:"「ひらがな」上限25文字", maxlength:"25" %>
+    <%= f.text_field :content_sub, class: :form__haiku, id:"haiku_catch_copy", placeholder:"「ひらがな」上限25文字", maxlength:"25" %>
   </div>
 
   <div class="actions">

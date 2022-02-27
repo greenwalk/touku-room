@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: touku_room_production
-  username: touku_room
-  password: <%= ENV['TOUKU_ROOM_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock

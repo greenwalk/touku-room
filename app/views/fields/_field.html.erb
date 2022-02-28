@@ -6,7 +6,7 @@
   <% else %>
     <h2 class="page-heading"><%= "現在のお題 (投票期間)" %></h2>
   <% end %>
-  <%#= link_to image_tag(field.theme.image, class: :card__img ), field_path(field.id) %>
+  <%= link_to image_tag(field.theme.image, class: :card__img ), field_path(field.id) %>
   <div class="card__body">
     <%= "季節 : #{field.theme.season.name}" %>
     <%= link_to "出題 : #{field.theme.user.name} 様", user_path(field.theme.user_id), class: :card__user %>

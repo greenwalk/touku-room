@@ -4,6 +4,6 @@ class Field < ApplicationRecord
 
   validates :status, presence: true
   validates :theme, presence: true
-  
+
   enum status: { touku: 0, voting: 1, finished: 2 }
 end

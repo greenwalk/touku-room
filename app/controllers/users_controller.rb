@@ -4,7 +4,7 @@ class UsersController < ApplicationController
 
   def edit
   end
-  
+
   def update
     if current_user.update(user_params)
       redirect_to user_path(current_user.id)
@@ -15,9 +15,9 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @haikus = Haiku.includes({user: :votes}, {field: :theme}).where(user_id: @user.id)
+    @haikus = Haiku.includes({ user: :votes }, { field: :theme }).where(user_id: @user.id)
     votes_count(@haikus)
-    @votes_rate = sprintf("%.3f",(@total_votes.to_f / @total_votes_num).floor(3))
+    @votes_rate = format('%.3f', (@total_votes.to_f / @total_votes_num).floor(3))
   end
 
   private

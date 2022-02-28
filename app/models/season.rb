@@ -5,10 +5,9 @@ class Season < ActiveHash::Base
     { id: 3, name: '夏' },
     { id: 4, name: '秋' },
     { id: 5, name: '冬' },
-    { id: 6, name: '暮・新年' },
+    { id: 6, name: '暮・新年' }
   ]
 
   include ActiveHash::Associations
   has_many :themes
-
-  end
+end

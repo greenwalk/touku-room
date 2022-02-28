@@ -4,12 +4,12 @@ class ThemesController < ApplicationController
   before_action :move_to_top, only: [:edit]
 
   def new
-    themes = current_user.themes.where(status: "set")
-    if themes.exists?
-      @theme = themes.order(updated_at: :desc)[-1]
-    else
-      @theme = Theme.new
-    end
+    themes = current_user.themes.where(status: 'set')
+    @theme = if themes.exists?
+               themes.order(updated_at: :desc)[-1]
+             else
+               Theme.new
+             end
   end
 
   def create
@@ -43,9 +43,6 @@ class ThemesController < ApplicationController
   end
 
   def move_to_top
-    unless current_user.id == @theme.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @theme.user_id
   end
-
 end

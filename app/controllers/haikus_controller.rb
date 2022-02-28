@@ -26,7 +26,6 @@ class HaikusController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
@@ -38,8 +37,9 @@ class HaikusController < ApplicationController
   end
 
   private
+
   def haiku_params
-    params.require(:haiku).permit(:content, :content_sub).merge(user_id: current_user.id, field_id: params[:field_id] )
+    params.require(:haiku).permit(:content, :content_sub).merge(user_id: current_user.id, field_id: params[:field_id])
   end
 
   def haiku_set
@@ -51,21 +51,14 @@ class HaikusController < ApplicationController
   end
 
   def move_to_top
-    unless current_user.id == @haiku.user_id
-      redirect_to root_path
-    end
+    redirect_to root_path unless current_user.id == @haiku.user_id
   end
 
   def move_to_theme
-    unless Theme.exists?(user_id: current_user.id, status: "set")
-      redirect_to new_theme_path
-    end
+    redirect_to new_theme_path unless Theme.exists?(user_id: current_user.id, status: 'set')
   end
 
   def now_field
-    unless @field.status == "touku"
-      redirect_to root_path
-    end
+    redirect_to root_path unless @field.status == 'touku'
   end
-
 end

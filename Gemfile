@@ -70,3 +70,4 @@ gem 'image_processing', '~> 1.2'
 gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'whenever', require: false
+gem "aws-sdk-s3", require: false

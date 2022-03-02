@@ -3,44 +3,49 @@
     <div class="user__wrapper">
       <h2 class="page-heading">
         <%= "ユーザー情報" %>
-        <% if @user.id == current_user.id%>
-          <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: :nav__btn %>
-        <% end%>
       </h2>
       <table class="table">
         <tbody>
-          <tr>
+          <tr class="tr">
             <th class="table__col1">俳号</th>
             <td class="table__col2"><%= @user.name %></td>
           </tr>
-          <tr>
+          <tr class="tr">
             <th class="table__col1">プロフィール</th>
             <td class="table__col2"><%= @user.profile %></td>
           </tr>
           <% if @user.id == current_user.id%>
-            <tr>
+            <tr class="tr">
               <th class="table__col1">メールアドレス</th>
               <td class="table__col2"><%= @user.email %></td>
             </tr>
           <% end%>
         </tbody>
       </table>
+      <% if @user.id == current_user.id%>
+        <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: :prof__nav__btn %>
+      <% end%>
       <h2 class="page-heading">
         <%= "#{@user.name} 様の成績"%>
       </h2>
       <table class="table">
         <tbody>
-          <tr>
+          <tr class="tr">
             <th class="table__col1">投句数</th>
             <td class="table__col2"><%= @haikus.size %></td>
           </tr>
-          <tr>
+          <tr class="tr">
             <th class="table__col1">総得票数</th>
             <td class="table__col2"><%= @total_votes %></td>
           </tr>
-          <tr>
-            <th class="table__col1">得票率</th>
-            <td class="table__col2"><%= @votes_rate %></td>
+          <tr class="tr">
+            <% if @total_votes == 0%>
+              <th class="table__col1">得票率</th>
+              <td class="table__col2"><%= 0 %></td>
+            <% else %>
+              <th class="table__col1">得票率</th>
+              <td class="table__col2"><%= @votes_rate %></td>
+            <% end %>
           </tr>
         </tbody>
       </table>

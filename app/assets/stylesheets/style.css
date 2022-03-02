@@ -333,24 +333,28 @@ a {
 /* ユーザーページ */
 .user__wrapper{
   min-height: calc(100vh - 161px);
+  text-align: center;
 }
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
-  width: 60%;
+  width: 50%;
+  margin: 0 auto 20px;
 }
+
 .table__col1{
   text-align: left;
   font-weight: bold;
-  background: #fafafa;
+  background: #FFFFFF;
   border-collapse: collapse;
-  border: 1px solid #f5f5f5;
+  border: 1.5px solid #5A544B;
   width: 30%;
   padding: 8px;
 }
 .table__col2{
   text-align: left;
-  border: 1px solid #f5f5f5;
+  border: 1.5px solid #5A544B;
+  background: #edece3;
   border-collapse: collapse;
   width: 70%;
   padding: 16px 8px;
@@ -359,6 +363,24 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+}
+.prof__nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.6em;
+  color: #EDF0AF;
+  text-decoration: none;
+  user-select: none;
+  border: 1.5px #EDF0AF solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #A574B0;
+  vertical-align: center;
+  margin-bottom: 20px;
+}
+.prof__nav__btn:hover{
+  color: #EDF0AF;
+  background: #d2b7d8;
 }
 /* フッター */
 

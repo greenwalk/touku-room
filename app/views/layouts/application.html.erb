@@ -24,7 +24,6 @@
             <div class="nav__right">
               <%= link_to "マイページ", user_path(current_user.id), class: :nav__btn %> 
               <%= link_to "お題を設定", new_theme_path, class: :nav__btn %> 
-              <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :nav__logout %> 
             </div>
           <%# // ログインしているときは上記を表示するようにしましょう %>
           <%# ログインしていないときは以下を表示するようにしましょう %>
@@ -43,6 +42,16 @@
     </div>
     <footer class="footer">
       <p class="copyright">Copyright © TOUKU ROOM All rights reserved.</p>
+    </footer>
+    <footer class="footer2">
+      <% if user_signed_in? %> 
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :footer__menu %>
+      <% else %>
+        <%= link_to "ログアウト", new_user_session_path, class: :footer__menu %>
+      <% end %>
+      <%= link_to "ルール", root_path, class: :footer__menu %> 
+      <%= link_to "プライバシーポリシー", root_path, class: :footer__menu %> 
+      <%= link_to "お問い合わせ", root_path, class: :footer__menu %> 
     </footer>
   </body>
 </html>

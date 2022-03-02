@@ -1,6 +1,7 @@
 /* リセットCSS */
 * {
   box-sizing: border-box;
+  -webkit-appearance: none;
 }
 
 html,

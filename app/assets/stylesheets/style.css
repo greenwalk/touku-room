@@ -88,6 +88,24 @@ a {
   background: #d2b7d8;
 }
 
+.nav__btn2{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.6em;
+  color: #EDF0AF;
+  text-decoration: none;
+  user-select: none;
+  border: 1.5px #EDF0AF solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #A574B0;
+  vertical-align: center;
+}
+.nav__btn2:hover{
+  color: #EDF0AF;
+  background: #d2b7d8;
+}
+
 .nav__logout{
   display: inline-block;
   padding: 0.4em 1.6em;

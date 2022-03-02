@@ -1,7 +1,6 @@
 <div class="main">
   <div class="inner">
     <div class="form__wrapper">
-      投句するには、お題を設定する必要があります。
       <% if Theme.exists?(user_id: current_user.id, status: "set") %>
         <h2 class="page-heading">設定中のお題</h2>
           <div class="card">
@@ -10,10 +9,11 @@
               <%= "季節 : #{@theme.season.name}" %>
             </div>
           </div>
-          <div class="actions">
-            <%= link_to "お題の変更", edit_theme_path(@theme.id), class: :nav__btn %> 
+          <div class="theme__action">
+            <%= link_to "お題の変更", edit_theme_path(@theme.id), class: :theme__nav__btn %>
           </div>
       <% else %>
+        <p class="attention">投句するには、お題を設定する必要があります。</p>
         <h2 class="page-heading">お題の設定</h2>
           <%= form_with model: @theme, url:themes_path, local: true do |f|%>
             <div class="field">

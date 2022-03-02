@@ -37,8 +37,7 @@ a {
 }
 
 .content__body {
-  padding-top: 100px;
-  padding-bottom: 15px;
+  padding: 100px 20px 15px;
   background-color: #CECFC0;
 }
 
@@ -177,10 +176,11 @@ a {
   border-radius: 10px;
   margin: 15px auto 0;
   background: #EDF0AF;
-  padding: 20px;
+  padding: 30px;
 }
 .card__img {
   text-align: center;
+  padding: 20px;
 }
 .card__title {
   display: block;
@@ -218,6 +218,33 @@ a {
   margin: 0px auto;
 }
 .touku___vote__btn:hover{
+  color: #EDF0AF;
+  background: #d2b7d8;
+}
+
+.attention{
+  color: red;
+  margin-bottom: 10px;
+}
+
+/* お題ページ */
+.theme__action{
+  text-align: center;
+}
+.theme__nav__btn{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 1.6em;
+  color: #EDF0AF;
+  text-decoration: none;
+  user-select: none;
+  border: 1.5px #EDF0AF solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  background: #A574B0;
+  margin-top: 20px;
+}
+.theme__nav__btn:hover{
   color: #EDF0AF;
   background: #d2b7d8;
 }
@@ -338,7 +365,7 @@ a {
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
-  width: 50%;
+  width: 55%;
   margin: 0 auto 20px;
 }
 
@@ -414,7 +441,7 @@ a {
     margin: 0 auto;
   }
   .page-heading {
-    font-size: 24px;
+    font-size: 30px;
   }
   .card {
     width: 90%;
@@ -428,7 +455,7 @@ a {
  /* スマホ表示 */
 @media (max-width: 599px) {
   .page-heading {
-    font-size: 20px;
+    font-size: 30px;
   }
   .card {
     width: 100%;

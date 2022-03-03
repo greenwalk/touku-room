@@ -68,9 +68,10 @@ a {
 
 .nav__right {
   padding-right: 10px;
+  display: flex;
 }
 .nav__btn{
-  display: inline-block;
+  /* display: inline-block; */
   padding: 0.4em 1.6em;
   font-size: 1.6em;
   color: #EDF0AF;
@@ -80,7 +81,8 @@ a {
   border-radius: 3px;
   transition: 0.4s ease;
   background: #A574B0;
-  vertical-align: center;
+  margin-left: 10px;
+  /* vertical-align: center; */
 }
 .nav__btn:hover{
   color: #EDF0AF;

@@ -14,15 +14,15 @@
             <th class="table__col1">プロフィール</th>
             <td class="table__col2"><%= @user.profile %></td>
           </tr>
-          <% if @user.id == current_user.id%>
+          <% if user_signed_in? && @user.id == current_user.id%>
             <tr class="tr">
               <th class="table__col1">メールアドレス</th>
               <td class="table__col2"><%= @user.email %></td>
             </tr>
-          <% end%>
+          <% end %>
         </tbody>
       </table>
-      <% if @user.id == current_user.id%>
+      <% if user_signed_in? && @user.id == current_user.id%>
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: :prof__nav__btn %>
       <% end%>
       <h2 class="page-heading">

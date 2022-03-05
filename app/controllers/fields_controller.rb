@@ -21,6 +21,9 @@ class FieldsController < ApplicationController
     end
   end
 
+  def rule
+  end
+
   private
 
   def field_set

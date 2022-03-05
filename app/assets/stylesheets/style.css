@@ -104,6 +104,14 @@ a {
 
 /* フォーム周り */
 .form__wrapper{
+  min-height: calc(100vh - 630px);
+}
+
+.user__form__wrapper{
+  min-height: calc(100vh - 161px);
+}
+
+.theme__form__wrapper{
   min-height: calc(100vh - 161px);
 }
 
@@ -169,7 +177,7 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 161px);
+  min-height: calc(100vh - 700px);
 }
 
 .card {

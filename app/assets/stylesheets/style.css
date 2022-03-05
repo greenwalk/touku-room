@@ -252,9 +252,6 @@ a {
 }
 
 /* 詳細ページ */
-.haiku__wrapper{
-  min-height: calc(100vh - 161px);
-}
 .haiku__hedding{
   font-size: 24px;
   font-weight: bold;

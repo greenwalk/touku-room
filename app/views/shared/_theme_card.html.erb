@@ -6,11 +6,3 @@
       <%= link_to "出題 : #{@field.theme.user.name} 様", user_path(@field.theme.user_id), class: :card__user %>
     </div>
 </div>
-
-<div class="haiku__wrapper">
-  <% if Haiku.exists?(user_id: current_user.id, field_id: @field.id) %>
-    <h2 class="page-heading"><%= "現在の俳句 : #{@haiku.content} (#{@haiku.content_sub})" %></h2>
-  <% else %>
-    <h2 class="page-heading"><%= "現在の俳句 : 投句されていません" %></h2>
-  <% end%>
-</div>

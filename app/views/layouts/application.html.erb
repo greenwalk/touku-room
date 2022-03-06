@@ -36,9 +36,6 @@
     <div class="content__body">
       <%= yield %>
     </div>
-    <footer class="footer">
-      <p class="copyright">Copyright © TOUKU ROOM All rights reserved.</p>
-    </footer>
     <footer class="footer2">
       <% if user_signed_in? %> 
         <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: :footer__menu %>
@@ -46,8 +43,11 @@
         <%= link_to "ログアウト", new_user_session_path, class: :footer__menu %>
       <% end %>
       <%= link_to "ルール", rule_fields_path, class: :footer__menu %> 
-      <%= link_to "プライバシーポリシー", root_path, class: :footer__menu %> 
+      <%= link_to "プライバシーポリシー", privacy_policy_fields_path, class: :footer__menu %> 
       <%= link_to "お問い合わせ", root_path, class: :footer__menu %> 
+    </footer>
+    <footer class="footer">
+      <p class="copyright">Copyright © TOUKU ROOM All rights reserved.</p>
     </footer>
   </body>
 </html>

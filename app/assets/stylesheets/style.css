@@ -151,6 +151,18 @@ a {
   margin-top: 30px;
 }
 
+.haiku__display{
+  background:#FFFFFF;
+  width: 60%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  border: #A574B0 1rem solid;
+  margin-bottom: 20px;
+}
+
 .select-box {
   height: 30px;
   width: 110px;
@@ -182,7 +194,11 @@ a {
 }
 
 /* メイン */
-
+.field-heading{
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+}
 .greeting{
   margin-bottom: 20px;
 }
@@ -461,6 +477,46 @@ a {
   font-size: 13px;
 }
 
+ /* ルールページ */
+.rule__wrapper{
+  background: #FFFFFF;
+  margin: 0 auto;
+  width: 80%;
+  border: #000000 1px solid;
+  min-height: calc(100vh - 161px);
+}
+.rule__header{
+  background: #e6e6e6;
+  border-bottom: #000000 1px solid;
+  padding: 5px;
+}
+
+.rule__title {
+  font-size: 28px;
+}
+.rule__sub__title{
+  font-size: 28px;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
+
+.rule__content__wrapper{
+  padding: 0 30px;
+}
+.rule__attention{
+  color: red;
+}
+
+.links{
+  display: block;
+}
+.rule__link{
+  display: block;
+  text-decoration: underline;
+  color: blue;
+  margin-bottom: 2px;
+}
+
 /* タブレット対応 */
 @media (max-width: 1024px) {
   .inner {
@@ -476,6 +532,9 @@ a {
   }
   .haiku_image{
     width: 60%;
+  }
+  .haiku{
+    font-size: 18px;
   }
 }
 
@@ -499,5 +558,8 @@ a {
   }
   .table{
     width: 100%;
+  }
+  .haiku{
+    font-size: 15px;
   }
 }

@@ -63,7 +63,7 @@ a {
   justify-content: space-between;
 }
 .logo {
-
+  margin-left: 10px;
 }
 
 .nav__right {
@@ -159,7 +159,7 @@ a {
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-  border: #A574B0 1rem solid;
+  border: #A574B0 0.5rem solid;
   margin-bottom: 20px;
 }
 
@@ -501,7 +501,7 @@ a {
 }
 
 .rule__content__wrapper{
-  padding: 0 30px;
+  padding: 15px 30px;
 }
 .rule__attention{
   color: red;

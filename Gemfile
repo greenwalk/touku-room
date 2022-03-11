@@ -71,3 +71,4 @@ gem 'jquery-rails'
 gem 'jquery-turbolinks'
 gem 'whenever', require: false
 gem "aws-sdk-s3", require: false
+gem 'rails-i18n'

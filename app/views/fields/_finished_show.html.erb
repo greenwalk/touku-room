@@ -1,4 +1,4 @@
-<div class="vote">
+<div class="result">
   <div class="haiku__result">
     <div class="haiku__rank">
         <%= "#{haiku_counter + 1}位" %>
@@ -8,7 +8,7 @@
     </div>
   </div>
   <div class="haiku__body">
-    <%= link_to haiku.user.name, "#", class: :finished__user %>
+    <%= link_to haiku.user.name, user_path(haiku.user.id), class: :finished__user %>
     <div class="result__haiku"><%= haiku.content %></div>
   </div>
 </div>

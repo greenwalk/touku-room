@@ -1,5 +1,29 @@
-<% if @field.status == "voting" %>
-  <%= render partial: 'voting_show', collection: @haikus, as: 'haiku' %>
-<% elsif @field.status == "finished" %>
-  <%= render partial: 'finished_show', collection: @haikus, as: 'haiku' %>
-<% end%>
+<main class="main">
+  <div class="inner">
+    <%# 現在のお題を表示 %>
+    <%= render 'shared/theme_card' %>
+    <% if @field.status == "voting" %>
+      <div class="vote__wrapper">
+        <%= render partial: 'voting_show', collection: @haikus, as: 'haiku' %>
+      </div>
+    <% elsif @field.status == "finished" %>
+      <div class="vote__wrapper">
+        <div class="result">
+          <div class="haiku__result">
+            <div class="haiku__rank">
+                <%= "順位" %>
+            </div>
+            <div class="haiku__points">
+                <%= "得点" %>
+            </div>
+          </div>
+          <div class="haiku__body">
+            <p class="finished__user">投稿者</p>
+            <div class="result__haiku"><%= "作品" %></div>
+          </div>
+        </div>
+        <%= render partial: 'finished_show', collection: @haikus, as: 'haiku' %>
+      </div>
+    <% end%>
+  </div>
+</main>

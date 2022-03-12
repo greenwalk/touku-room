@@ -7,11 +7,6 @@
     <%= f.text_field :content, class: :form__haiku, id:"haiku_title", placeholder:"俳句を入力", maxlength:"25" %>
   </div>
 
-  <div class="field">
-    <%= f.label :content_sub, "俳句のよみ" %><br />
-    <%= f.text_field :content_sub, class: :form__haiku, id:"haiku_catch_copy", placeholder:"「ひらがな」のみ上限25文字（スペースも不可）", maxlength:"25" %>
-  </div>
-
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
   </div>

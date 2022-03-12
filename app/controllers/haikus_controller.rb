@@ -44,7 +44,7 @@ class HaikusController < ApplicationController
   private
 
   def haiku_params
-    params.require(:haiku).permit(:content, :content_sub).merge(user_id: current_user.id, field_id: params[:field_id])
+    params.require(:haiku).permit(:content).merge(user_id: current_user.id, field_id: params[:field_id])
   end
 
   def haiku_set

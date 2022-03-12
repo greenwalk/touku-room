@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'rule'
       get 'privacy_policy'
     end
-    resources :haikus, only: [:new, :create, :edit, :update] do
+    resources :haikus, only: [:new, :create, :edit, :update, :destroy] do
       resources :votes, only: [:create, :destroy]
     end
   end

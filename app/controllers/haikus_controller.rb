@@ -1,10 +1,10 @@
 class HaikusController < ApplicationController
-  before_action :haiku_set, only: [:edit, :update]
-  before_action :field_set, only: [:new, :create, :edit, :update]
+  before_action :haiku_set, only: [:edit, :update, :destroy]
+  before_action :field_set, only: [:new, :create, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_top, only: [:edit]
   before_action :move_to_theme, only: [:new]
-  before_action :now_field, only: [:new, :create, :edit, :update]
+  before_action :now_field, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     # 俳句を既に投稿している場合は、俳句編集ページへ移動。していない場合は、投句ページへ移動
@@ -36,10 +36,15 @@ class HaikusController < ApplicationController
     end
   end
 
+  def destroy
+    @haiku.destroy
+    redirect_to root_path
+  end
+
   private
 
   def haiku_params
-    params.require(:haiku).permit(:content, :content_sub).merge(user_id: current_user.id, field_id: params[:field_id])
+    params.require(:haiku).permit(:content).merge(user_id: current_user.id, field_id: params[:field_id])
   end
 
   def haiku_set

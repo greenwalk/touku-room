@@ -3,10 +3,10 @@
     <%= link_to "第#{field.id}回", field_path(field.id), class: :card__title %>
   <% elsif field.status == "touku" %>
     <h2 class="page-heading"><%= "現在のお題 (投句期間)" %></h2>
-    <p class="rule__attention">締切:2022/03/13(日) 22:00</p> 
+    <p class="rule__attention">締切:2022/03/13(日) 21:00</p> 
   <% else %>
     <h2 class="page-heading"><%= "現在のお題 (投票期間)" %></h2>
-    <p class="rule__attention">締切:2022/03/15(日) 22:00</p> 
+    <p class="rule__attention">締切:2022/03/15(火) 22:00</p> 
   <% end %>
   <%= link_to image_tag(field.theme.image, class: :card__img ), field_path(field.id) %>
   <div class="card__body">

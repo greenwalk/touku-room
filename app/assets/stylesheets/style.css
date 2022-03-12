@@ -602,3 +602,9 @@ a {
   color: white;
   text-align: center;
 }
+
+.error-alert{
+  background: #A22041;
+  padding: 5px;
+  color: #FFFFFF;
+}

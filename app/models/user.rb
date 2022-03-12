@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :haikus
   has_many :votes
 
+  devise :validatable, password_length: 8..128
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, on: :create
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i }, allow_blank: true, on: :update
   validates :name, presence: true

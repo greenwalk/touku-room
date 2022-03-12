@@ -1,4 +1,7 @@
 <%= form_with(model: [@field, @haiku], local: true) do |f| %>
+
+  <%= render 'shared/error_messages', model: f.object %>
+
   <div class="field">
     <%= f.label :content, "あなたの俳句" %><br />
     <%= f.text_field :content, class: :form__haiku, id:"haiku_title", placeholder:"俳句を入力", maxlength:"25" %>

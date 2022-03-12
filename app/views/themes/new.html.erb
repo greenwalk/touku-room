@@ -16,6 +16,9 @@
         <p class="attention">投句するには、お題を設定する必要があります。</p>
         <h2 class="page-heading">お題の設定</h2>
           <%= form_with model: @theme, url:themes_path, local: true do |f|%>
+
+            <%= render 'shared/error_messages', model: f.object %>
+
             <div class="field">
               <%= f.label :season_id, "お題の季節" %><br />
               <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"select-box", id:"theme-season"}) %>

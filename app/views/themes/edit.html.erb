@@ -3,6 +3,9 @@
     <div class="theme__form__wrapper">
       <h2 class="page-heading">お題の編集</h2>
         <%= form_with model: @theme, url:theme_path(@theme.id), local: true do |f|%>
+        
+          <%= render 'shared/error_messages', model: f.object %>
+
           <div class="field">
             <%= f.label :season_id, "お題の季節" %><br />
             <%= f.collection_select(:season_id, Season.all, :id, :name, {}, {class:"select-box", id:"theme-season"}) %>

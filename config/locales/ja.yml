@@ -204,3 +204,16 @@ ja:
       long: "%Y/%m/%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後
+
+  activerecord:
+    models:
+      theme: お題
+      field: 俳句会場
+      haiku: 俳句
+    attributes:
+      theme:
+        season: 季節
+        image: お題画像
+      haiku:
+        content: 俳句
+        content_sub: よみ

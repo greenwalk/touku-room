@@ -556,6 +556,22 @@ a {
   .haiku{
     font-size: 18px;
   }
+  .notice {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #9FCD76;
+    color: white;
+    text-align: center;
+  }
+  .alert {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #A22041;
+    color: white;
+    text-align: center;
+  }
 }
 
  /* スマホ表示 */
@@ -581,6 +597,22 @@ a {
   }
   .haiku{
     font-size: 15px;
+  }
+  .notice {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #9FCD76;
+    color: white;
+    text-align: center;
+  }
+  .alert {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #A22041;
+    color: white;
+    text-align: center;
   }
 }
 

@@ -602,6 +602,7 @@ a {
     width: 90%;
     border-radius: 100vh;
     margin: 0 auto;
+    margin-bottom: 10px;
     background-color: #9FCD76;
     color: white;
     text-align: center;
@@ -610,6 +611,7 @@ a {
     width: 90%;
     border-radius: 100vh;
     margin: 0 auto;
+    margin-bottom: 10px;
     background-color: #A22041;
     color: white;
     text-align: center;
@@ -618,18 +620,19 @@ a {
 
  /* フラッシュメッセージ */
 .notice {
-  width: 70%;
+  width: 90%;
   border-radius: 100vh;
   margin: 0 auto;
+  margin-bottom: 10px;
   background-color: #9FCD76;
   color: white;
   text-align: center;
 }
 
 .alert {
-  width: 70%;
+  width: 90%;
   border-radius: 100vh;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: #A22041;
   color: white;
   text-align: center;

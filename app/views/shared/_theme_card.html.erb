@@ -1,5 +1,9 @@
 <div class="card">
-  <h2 class="page-heading"><%= "現在のお題" %></h2>
+  <% if @field.status == "finished" %>
+    <h2 class="page-heading"><%= "第#{@field.id}回 お題" %></h2>
+  <% else %>
+    <h2 class="page-heading"><%= "現在のお題" %></h2>
+  <% end %>
     <%= link_to image_tag(@field.theme.image, class: :card__img ), "#" %>
     <div class="card__body">
       <%= "季節 : #{@field.theme.season.name}" %>

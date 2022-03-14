@@ -384,7 +384,6 @@ a {
 .vote__body{
   margin-left: 5px;
   width: 450px;
-  text-align: center;
 }
 .vote_btn {
   height: 25px;
@@ -418,6 +417,34 @@ a {
 }
 .haiku__body{
   margin-bottom: 15px;
+}
+.voted__users__wrapper{
+  text-align: center;
+  margin: 0 auto;
+  min-height: calc(100vh - 200px);
+  width: 60%;
+  margin-top: 20px;
+}
+.voted__user{
+  background: #FFFFFF;
+  align-items: center;
+  border: black 1px solid;
+  margin-bottom: 3px;
+}
+.voted__user__body{
+  padding: 5px 10px;
+  text-align: left;
+  font-size: 20px;
+}
+.voted__num{
+  font-size: 18px;
+  width: 60px;
+  border-radius: 100vh;
+  margin: 0 auto;
+  padding: 5px;
+  margin-bottom: 10px;
+  background-color: #A22041;
+  color: white;
 }
 
 /* ユーザーページ */
@@ -556,6 +583,22 @@ a {
   .haiku{
     font-size: 18px;
   }
+  .notice {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #9FCD76;
+    color: white;
+    text-align: center;
+  }
+  .alert {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    background-color: #A22041;
+    color: white;
+    text-align: center;
+  }
 }
 
  /* スマホ表示 */
@@ -582,22 +625,41 @@ a {
   .haiku{
     font-size: 15px;
   }
+  .notice {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #9FCD76;
+    color: white;
+    text-align: center;
+  }
+  .alert {
+    width: 90%;
+    border-radius: 100vh;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    background-color: #A22041;
+    color: white;
+    text-align: center;
+  }
 }
 
  /* フラッシュメッセージ */
 .notice {
-  width: 70%;
+  width: 90%;
   border-radius: 100vh;
   margin: 0 auto;
+  margin-bottom: 10px;
   background-color: #9FCD76;
   color: white;
   text-align: center;
 }
 
 .alert {
-  width: 70%;
+  width: 90%;
   border-radius: 100vh;
-  margin: 0 auto;
+  margin: 10px auto;
   background-color: #A22041;
   color: white;
   text-align: center;

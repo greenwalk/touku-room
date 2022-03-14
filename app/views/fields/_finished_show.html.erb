@@ -4,11 +4,11 @@
         <%= "#{haiku_counter + 1}位" %>
     </div>
     <div class="haiku__points">
-        <%= "#{haiku.votes.count}点" %>
+        <%= link_to "#{haiku.votes.count}点", field_haiku_path(haiku.field.id, haiku.id) %>
     </div>
   </div>
   <div class="haiku__body">
     <%= link_to haiku.user.name, user_path(haiku.user.id), class: :finished__user %>
-    <div class="result__haiku"><%= haiku.content %></div>
+    <div class="result__haiku"><%= link_to haiku.content, field_haiku_path(haiku.field.id, haiku.id) %></div>
   </div>
 </div>

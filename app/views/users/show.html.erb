@@ -36,15 +36,15 @@
           </tr>
           <tr class="tr">
             <th class="table__col1">総得票数</th>
-            <td class="table__col2"><%= @total_votes %></td>
+            <td class="table__col2"><%#= @total_votes %></td>
           </tr>
           <tr class="tr">
             <% if @total_votes == 0%>
               <th class="table__col1">得票率</th>
-              <td class="table__col2"><%= 0 %></td>
+              <td class="table__col2"><%#= 0 %></td>
             <% else %>
               <th class="table__col1">得票率</th>
-              <td class="table__col2"><%= @votes_rate %></td>
+              <td class="table__col2"><%#= @votes_rate %></td>
             <% end %>
           </tr>
         </tbody>
@@ -53,7 +53,6 @@
         <%= "#{@user.name} 様の作品"%>
       </h2>
       <div class="user__card">
-        <%# 部分テンプレートでそのユーザーが投稿したプロトタイプ投稿一覧を表示する %>
         <%= render partial: 'field', collection: @haikus, as: 'haiku'%>
       </div>
     </div>

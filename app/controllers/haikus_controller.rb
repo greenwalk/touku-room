@@ -5,6 +5,7 @@ class HaikusController < ApplicationController
   before_action :move_to_top, only: [:edit]
   before_action :move_to_theme, only: [:new]
   before_action :now_field, only: [:new, :create, :edit, :update, :destroy]
+  before_action :finished_field, only: [:show]
 
   def new
     # 俳句を既に投稿している場合は、俳句編集ページへ移動。していない場合は、投句ページへ移動
@@ -42,6 +43,7 @@ class HaikusController < ApplicationController
   end
   
   def show
+    @votes = @haiku.votes
   end
 
   private
@@ -68,5 +70,9 @@ class HaikusController < ApplicationController
 
   def now_field
     redirect_to root_path unless @field.status == 'touku'
+  end
+
+  def finished_field
+    redirect_to root_path unless @field.status == 'finished'
   end
 end

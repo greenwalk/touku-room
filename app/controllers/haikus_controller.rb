@@ -1,6 +1,6 @@
 class HaikusController < ApplicationController
-  before_action :haiku_set, only: [:edit, :update, :destroy]
-  before_action :field_set, only: [:new, :create, :edit, :update, :destroy]
+  before_action :haiku_set, only: [:edit, :update, :destroy, :show]
+  before_action :field_set, only: [:new, :create, :edit, :update, :destroy, :show]
   before_action :authenticate_user!, only: [:new, :edit]
   before_action :move_to_top, only: [:edit]
   before_action :move_to_theme, only: [:new]
@@ -39,6 +39,9 @@ class HaikusController < ApplicationController
   def destroy
     @haiku.destroy
     redirect_to root_path
+  end
+  
+  def show
   end
 
   private

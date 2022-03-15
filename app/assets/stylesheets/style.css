@@ -52,6 +52,7 @@ a {
   background-color: #A574B0;
   width: 100%;
   padding: 15px 0;
+  z-index: 100;
 }
 .inner {
   width: 100%;
@@ -91,7 +92,6 @@ a {
 }
 
 .nav__btn{
-  /* display: inline-block; */
   padding: 0.4em 1.6em;
   font-size: 1.6em;
   color: #EDF0AF;
@@ -102,7 +102,6 @@ a {
   transition: 0.4s ease;
   background: #A574B0;
   margin-left: 10px;
-  /* vertical-align: center; */
 }
 .nav__btn:hover{
   color: #EDF0AF;
@@ -149,6 +148,7 @@ a {
 
 .haiku__wrapper {
   margin-top: 30px;
+  text-align: center;
 }
 
 .haiku__display{
@@ -195,10 +195,77 @@ a {
 
 /* メイン */
 .field-heading{
+  width: 40%;
+  background: white;
+  margin: 0 auto;
   font-size: 30px;
   text-align: center;
   margin-bottom: 10px;
+  position: relative;
+  padding: 0.7rem 1.5rem;
+  -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
 }
+.field-heading:before,
+.field-heading:after{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+.field-heading:before{
+  top: 0;
+}
+.field-heading:after{
+  bottom: 0;
+}
+
+.past-field-heading{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  background: white;
+  margin: 0 auto;
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 0.7rem 1.5rem;
+  -webkit-box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+  box-shadow: 0 2px 14px rgba(0, 0, 0, .1);
+}
+.past-field-heading:before,
+.past-field-heading:after{
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  content: '';
+  background-image: -webkit-linear-gradient(315deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+  background-image: linear-gradient(135deg, #704308 0%, #ffce08 40%, #e1ce08 60%, #704308 100%);
+}
+.past-field-heading:before{
+  top: 0;
+}
+.past-field-heading:after{
+  bottom: 0;
+}
+.past_page_heading {
+  font-size: 30px;
+}
+.img__link__allow{
+  width: 23px;
+  height: 23px;
+  vertical-align: 0;
+}
+.link__allow{
+  margin-left: 15px;
+}
+
 .greeting{
   margin-bottom: 20px;
 }
@@ -248,6 +315,11 @@ a {
   color: #999;
   text-align: right;
   text-decoration: underline;
+}
+
+.main_field_wrapper{
+  margin-bottom: 30px;
+  text-align: center;
 }
 
 .touku___vote__btn{

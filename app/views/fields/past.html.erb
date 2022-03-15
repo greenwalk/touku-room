@@ -1,5 +1,5 @@
 <div class="card__wrapper">
-  <% if Field.exists?(status: :touku) %>
+  <% if Field.exists?(status: :finished) %>
     <h2 class="field-heading">過去のお題</h2>
     <%= render partial: 'field', collection: @fields %>
   <% else %>

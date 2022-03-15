@@ -9,6 +9,7 @@ class FieldsController < ApplicationController
     end
     @field = fields.order(updated_at: :desc)[0]
     @fields = Field.where(status: 'finished').order(updated_at: :desc)
+    @last_time_field = @fields[0]
   end
 
   def show

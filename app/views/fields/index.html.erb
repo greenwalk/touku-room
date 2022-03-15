@@ -6,11 +6,20 @@
       </div>
     <% end %>
     <div class="main_field_wrapper">
+      <h2 class="field-heading">現在のお題</h2>
       <%= render partial: 'field', locals: { field: @field } %>
     </div>
-    <div class="card__wrapper">
-      <h2 class="field-heading">過去のお題</h2>
-      <%= render partial: 'field', collection: @fields %> 
+    <div class="main_field_wrapper">
+      <h2 class="field-heading">前回のお題</h2>
+      <%= render partial: 'field', locals: { field: @last_time_field } %>
     </div>
+    <% if Field.exists?(status: :finished) %>
+      <div class="card__wrapper">
+        <div class="past-field-heading">
+          <%= link_to "過去のお題を見る", root_path, class: :past_page_heading %>
+          <%= link_to image_tag("link_allow.jpg", class: :img__link__allow), root_path, class: :link__allow %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </main>

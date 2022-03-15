@@ -1,21 +1,28 @@
 <div class="card">
+  <%# フィールドのステータスによって表示される文字を変える %>
   <% if field.status == "finished" %>
     <%= link_to "第#{field.id}回", field_path(field.id), class: :card__title %>
   <% elsif field.status == "touku" %>
-    <h2 class="page-heading"><%= "現在のお題 (投句期間)" %></h2>
+    <h2 class="page-heading"><%= "投句期間" %></h2>
     <p class="rule__attention">締切:2022/03/13(日) 21:00</p> 
   <% else %>
-    <h2 class="page-heading"><%= "現在のお題 (投票期間)" %></h2>
+    <h2 class="page-heading"><%= "投票期間" %></h2>
     <p class="rule__attention">締切:2022/03/15(火) 22:00</p> 
   <% end %>
+
+  <%# お題のメインボディ %>
   <%= link_to image_tag(field.theme.image, class: :card__img ), field_path(field.id) %>
   <div class="card__body">
     <%= "季節 : #{field.theme.season.name}" %>
     <%= link_to "出題 : #{field.theme.user.name} 様", user_path(field.theme.user_id), class: :card__user %>
   </div>
+
+  <%# ステータスによって投句／投票ボタンを表示 %>
   <% if field.status == "touku" %>
-    <%= link_to "投句する", "/fields/#{@field.id}/haikus/new", class: :touku___vote__btn %> 
+    <%= link_to "投句する", "/fields/#{field.id}/haikus/new", class: :touku___vote__btn %> 
   <% elsif field.status == "voting" %>
-    <%= link_to "投票する", field_path(@field.id), class: :touku___vote__btn %>
+    <%= link_to "投票する", field_path(field.id), class: :touku___vote__btn %>
+  <% else %>
+    <%= link_to "結果を見る", field_path(field.id), class: :touku___vote__btn %>
   <% end %>
 </div>

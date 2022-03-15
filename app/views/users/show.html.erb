@@ -1,7 +1,7 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
-      <h2 class="page-heading">
+      <h2 class="field-heading">
         <%= "ユーザー情報" %>
       </h2>
       <table class="table">
@@ -25,7 +25,7 @@
       <% if user_signed_in? && @user.id == current_user.id%>
         <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: :prof__nav__btn %>
       <% end%>
-      <h2 class="page-heading">
+      <h2 class="field-heading">
         <%= "#{@user.name} 様の成績"%>
       </h2>
       <table class="table">
@@ -63,7 +63,7 @@
           </tr>
         </tbody>
       </table>
-      <h2 class="page-heading">
+      <h2 class="field-heading">
         <%= "#{@user.name} 様の作品"%>
       </h2>
       <div class="user__card">

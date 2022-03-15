@@ -18,7 +18,8 @@ div {
 
 h1,
 h2{
-  text-shadow: 0 0 1px #3b4043;
+  font-weight: normal;
+  text-shadow: 0 0 1px black;
 }
 
 body {
@@ -299,14 +300,14 @@ a {
 }
 .card__title {
   display: block;
-  font-size: 20px;
+  font-size: 30px;
   margin-bottom: 8px;
-  font-weight: bold;
+  text-shadow: 0 0 1px black;
 }
 .card__body {
   margin-top: 10px;
   font-size: 30px;
-	font-weight:bold;
+	text-shadow: 0 0 1px black;
 }
 .card__summary {
   font-size: 16px;
@@ -367,77 +368,6 @@ a {
 .theme__nav__btn:hover{
   color: #EDF0AF;
   background: #d2b7d8;
-}
-
-/* 詳細ページ */
-.haiku__hedding{
-  font-size: 24px;
-  font-weight: bold;
-  text-align: center;
-}
-.haiku__user{
-  display: block;
-  font-size: 16px;
-  color: #999;
-  text-align: center;
-  text-decoration: underline;
-}
-.haiku__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
-}
-.haiku__detail{
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin-bottom: 8px;
-}
-.detail__title{
-  font-size: 20px;
-  font-weight: bold;
-}
-.haiku__manage{
-  display: flex;
-  justify-content: center;
-  padding-top: 16px;
-}
-.haiku__btn{
-  display: block;
-  padding: 0.4em 1.6em;
-  font-size: 0.4em;
-  color: #999;
-  text-decoration: none;
-  user-select: none;
-  border: 1px #999 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
-  margin: 0 4px;
-}
-.haiku__btn:hover{
-  color: #fff;
-  background: #999;
-}
-
-.haiku__comments{
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin: 28px 0 40px 0;
-}
-
-.comments_lists{
-  padding-left: 20px;
-}
-
-.comments_list{
-  list-style-type: square;
-  padding-bottom: 5px;
-}
-
-.comment_user{
-  font-size: 16px;
-  color: #999;
-  text-decoration: underline;
 }
 
 /* 投票ページ */
@@ -535,7 +465,7 @@ a {
 
 .table__col1{
   text-align: left;
-  font-weight: bold;
+  text-shadow: 0 0 0.2px black;
   background: #FFFFFF;
   border-collapse: collapse;
   border: 1.5px solid #5A544B;

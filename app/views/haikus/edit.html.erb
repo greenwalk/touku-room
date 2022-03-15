@@ -4,14 +4,14 @@
     <%= render 'shared/theme_card' %>
     <%# 現在の俳句を表示 %>
     <div class="haiku__wrapper">
-      <h2 class="page-heading"><%= "現在の俳句" %></h2>
+      <h2 class="page--heading"><%= "現在の俳句" %></h2>
       <div class="haiku__display">
         <h2 class="haiku"><%= @haiku.content %></h2>
       </div>
     </div>
     <%# 俳句の編集フォーム %>
     <div class="form__wrapper">
-      <h2 class="page-heading"><%= "俳句を編集" %></h2>
+      <h2 class="page--heading"><%= "俳句を編集" %></h2>
         <%= render 'form' %>
         <%= link_to "現在の俳句を削除", field_haiku_path(@haiku.field.id, @haiku.id), method: :delete, class: :cancel__nav__btn %> 
     </div>

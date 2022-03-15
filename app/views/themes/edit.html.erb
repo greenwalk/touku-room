@@ -1,7 +1,7 @@
 <div class="main">
   <div class="inner">
     <div class="theme__form__wrapper">
-      <h2 class="page-heading">お題の編集</h2>
+      <h2 class="field-heading">お題の編集</h2>
         <%= form_with model: @theme, url:theme_path(@theme.id), local: true do |f|%>
         
           <%= render 'shared/error_messages', model: f.object %>

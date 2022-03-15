@@ -13,9 +13,12 @@
             <%= link_to "お題の変更", edit_theme_path(@theme.id), class: :theme__nav__btn %>
           </div>
       <% else %>
-        <p class="attention">投句するには、お題を設定する必要があります。</p>
         <h2 class="field-heading">お題の設定</h2>
           <%= form_with model: @theme, url:themes_path, local: true do |f|%>
+
+            <div class="attention__sentence">
+              <p>投句するには、お題を設定する必要があります。<%= link_to "ルール", rule_fields_path, class: :attention__link %>をご一読ください</p>
+            </div>
 
             <%= render 'shared/error_messages', model: f.object %>
 

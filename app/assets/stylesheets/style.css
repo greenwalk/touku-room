@@ -405,13 +405,16 @@ a {
 }
 .haiku__result {
   display: flex;
+  width: 8%;
 }
 .haiku__rank{
   color: red;
-  margin: 0 10px;
+  text-align: center;
+  width: 50%;
 }
 .haiku__points{
-  margin-right: 10px;
+  text-align: center;
+  width: 50%;
 }
 .finished__user {
   display: block;
@@ -421,6 +424,7 @@ a {
   text-decoration: underline;
 }
 .haiku__body{
+  margin-left: 10px;
   margin-bottom: 15px;
 }
 .voted__users__wrapper{
@@ -604,6 +608,10 @@ a {
     color: white;
     text-align: center;
   }
+  .haiku__result {
+    display: flex;
+    width: 12%;
+  }
 }
 
  /* スマホ表示 */
@@ -647,6 +655,10 @@ a {
     background-color: #A22041;
     color: white;
     text-align: center;
+  }
+  .haiku__result {
+    display: flex;
+    width: 12%;
   }
 }
 

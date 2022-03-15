@@ -16,6 +16,11 @@ div {
   padding: 0;
 }
 
+h1,
+h2{
+  text-shadow: 0 0 1px #3b4043;
+}
+
 body {
   font-family: 'Noto Serif JP', serif;
   color: #3b4043;

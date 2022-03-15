@@ -276,7 +276,8 @@ a {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: calc(100vh - 700px);
+  min-height: calc(100vh - 630px);
+  text-align: center;
 }
 
 .card {

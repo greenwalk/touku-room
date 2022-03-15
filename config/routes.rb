@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     collection do
       get 'rule'
       get 'privacy_policy'
+      get 'past'
     end
     resources :haikus, only: [:new, :create, :edit, :update, :destroy, :show] do
       resources :votes, only: [:create, :destroy]

@@ -28,6 +28,10 @@ class FieldsController < ApplicationController
   def privacy_policy
   end
 
+  def past
+    @fields = Field.where(status: 'finished').order(updated_at: :desc)
+  end
+
   private
 
   def field_set

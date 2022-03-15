@@ -36,15 +36,29 @@
           </tr>
           <tr class="tr">
             <th class="table__col1">総得票数</th>
-            <td class="table__col2"><%#= @total_votes %></td>
+            <td class="table__col2">
+              <% if Field.exists?(status: :touku) || (Field.exists?(status: :voting) && user_signed_in? && @user.id == current_user.id) %>
+                <%= @total_votes %>
+              <% else %>
+                <%= "結果が出るまでお待ちください" %>
+              <% end %>
+            </td>
           </tr>
           <tr class="tr">
-            <% if @total_votes == 0%>
+            <% if Field.exists?(status: :touku) || (Field.exists?(status: :voting) && user_signed_in? && @user.id == current_user.id) %>
               <th class="table__col1">得票率</th>
-              <td class="table__col2"><%#= 0 %></td>
+              <td class="table__col2">
+                <% if @total_votes == 0 %>
+                  <%= 0 %>
+                <% else %>
+                  <%= @votes_rate %>
+                <% end %>
+              </td>
             <% else %>
               <th class="table__col1">得票率</th>
-              <td class="table__col2"><%#= @votes_rate %></td>
+              <td class="table__col2">
+                  <%= "結果が出るまでお待ちください" %>
+              </td>
             <% end %>
           </tr>
         </tbody>

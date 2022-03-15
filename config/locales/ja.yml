@@ -212,7 +212,7 @@ ja:
       haiku: 俳句
     attributes:
       theme:
-        season: 季節
+        season_id: 季節
         image: お題画像
       haiku:
         content: 俳句

@@ -57,7 +57,7 @@ a {
   z-index: 100;
 }
 .inner {
-  width: 100%;
+  width: 95%;
   margin: 0 auto;
 }
 .nav {
@@ -197,7 +197,7 @@ a {
 
 /* メイン */
 .field-heading{
-  width: 45%;
+  width: 50%;
   background: white;
   margin: 10px auto 20px;
   font-size: 30px;
@@ -228,7 +228,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 45%;
+  width: 50%;
   background: white;
   margin: 0 auto;
   font-size: 30px;
@@ -286,7 +286,7 @@ a {
 }
 
 .card {
-  width: 90%;
+  width: 100%;
   text-align: center;
   border-radius: 10px;
   margin: 15px auto 0;
@@ -615,19 +615,17 @@ a {
 
 /* タブレット対応 */
 @media (max-width: 1024px) {
-  .inner {
-    width: 90%;
-    margin: 0 auto;
-  }
   .card {
-    width: 90%;
     margin-bottom: 40px;
   }
   .haiku_image{
     width: 60%;
   }
+  .haiku__display{
+    width: 90%;
+  }
   .haiku{
-    font-size: 18px;
+    font-size: 30px;
   }
   .notice {
     width: 90%;
@@ -657,11 +655,7 @@ a {
  /* スマホ表示 */
 @media (max-width: 599px) {
   .card {
-    width: 100%;
     margin-bottom: 40px;
-  }
-  .card__title {
-    font-size: 18px;
   }
   .card__summary {
     font-size: 14px;
@@ -672,8 +666,11 @@ a {
   .table{
     width: 100%;
   }
+  .haiku__display{
+    width: 90%;
+  }
   .haiku{
-    font-size: 15px;
+    font-size: 27px;
   }
   .notice {
     width: 90%;

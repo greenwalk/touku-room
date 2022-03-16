@@ -1,6 +1,6 @@
 <div class="card">
   <% if @field.status == "finished" %>
-    <h2 class="page--heading"><%= link_to "第#{@field.id}回", field_path(@field.id) %><%= " お題" %></h2>
+    <h2 class="page--heading"><%= link_to "第#{@field.id}回", field_path(@field.id) %></h2>
   <% else %>
     <h2 class="page--heading"><%= "現在のお題" %></h2>
   <% end %>

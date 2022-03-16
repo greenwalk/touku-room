@@ -15,8 +15,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @haikus = Haiku.includes({ user: :votes }, { field: :theme }).where(user_id: @user.id)
-    votes_count(@haikus)
+    @finished_haikus = Haiku.includes(user: :votes).where(user_id: @user.id).joins(:field).merge(Field.where(status: :finished))
+    votes_count(@finished_haikus)
     @votes_rate = format('%.3f', (@total_votes.to_f / @total_votes_num).floor(3))
   end
 

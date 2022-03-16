@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+<% if user_signed_in? && current_user.id != haiku.user.id%>
     <% if current_user.already_voted?(haiku) %>
         <%= link_to field_haiku_vote_path(haiku.field.id, haiku.id, current_user.votes.find_by(haiku: haiku)), method: :delete, remote: true do %>
             <%= image_tag("vote_del.png", class: :vote_btn) %>
@@ -8,4 +8,6 @@
             <%= image_tag("vote.png", class: :vote_btn) %>
         <% end %>
     <% end %>
+<% else %>
+    <%= image_tag("no_vote.png", class: :vote_btn) %>
 <% end %>

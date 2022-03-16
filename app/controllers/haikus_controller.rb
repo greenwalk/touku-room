@@ -39,7 +39,7 @@ class HaikusController < ApplicationController
 
   def destroy
     @haiku.destroy
-    redirect_to root_path
+    redirect_to new_field_haiku_path(@field.id)
   end
   
   def show

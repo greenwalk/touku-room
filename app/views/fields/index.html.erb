@@ -15,7 +15,7 @@
         <%= render partial: 'field', locals: { field: @last_time_field } %>
       </div>
     <% end %>
-    <div class="card__wrapper">
+    <div class="main_field_wrapper">
       <div class="past-field-heading">
         <h2 class="past_page_heading"><%= link_to "過去のお題を見る", past_fields_path %></h2>
         <%= link_to image_tag("link_allow.jpg", class: :img__link__allow), past_fields_path, class: :link__allow %>

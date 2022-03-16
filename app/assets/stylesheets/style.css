@@ -374,7 +374,6 @@ a {
 .vote__wrapper{
   margin: 0 auto;
   min-height: calc(100vh - 200px);
-  width: 90%;
   margin-top: 20px;
 }
 .vote {
@@ -387,10 +386,10 @@ a {
 }
 .vote__body{
   margin-left: 5px;
-  width: 450px;
+  font-size: 32px;
 }
 .vote_btn {
-  height: 25px;
+  height: 32px;
   margin: 0 10px;
 }
 
@@ -404,7 +403,8 @@ a {
 }
 .haiku__result {
   display: flex;
-  width: 8%;
+  width: 12%;
+  font-size: 28px;
 }
 .haiku__rank{
   color: red;
@@ -415,16 +415,19 @@ a {
   text-align: center;
   width: 50%;
 }
+.haiku__body{
+  margin-left: 10px;
+  margin-bottom: 15px;
+}
 .finished__user {
   display: block;
-  font-size: 12px;
+  font-size: 20px;
   color: #999;
   text-align: left;
   text-decoration: underline;
 }
-.haiku__body{
-  margin-left: 10px;
-  margin-bottom: 15px;
+.result__haiku{
+  font-size: 29px;
 }
 .voted__users__wrapper{
   text-align: center;
@@ -627,6 +630,12 @@ a {
   .haiku{
     font-size: 30px;
   }
+  .vote__body{
+    font-size: 32px;
+  }
+  .vote_btn {
+    height: 32px;
+  }
   .notice {
     width: 90%;
     border-radius: 100vh;
@@ -645,7 +654,7 @@ a {
   }
   .haiku__result {
     display: flex;
-    width: 12%;
+    width: 15%;
   }
   .attention__sentence{
     width: 65%;
@@ -672,6 +681,12 @@ a {
   .haiku{
     font-size: 27px;
   }
+  .vote__body{
+    font-size: 28px;
+  }
+  .vote_btn {
+    height: 28px;
+  }
   .notice {
     width: 90%;
     border-radius: 100vh;
@@ -692,9 +707,12 @@ a {
   }
   .haiku__result {
     display: flex;
-    width: 12%;
+    width: 15%;
   }
   .attention__sentence{
     width: 65%;
+  }
+  .result__haiku{
+    font-size: 27px;
   }
 }

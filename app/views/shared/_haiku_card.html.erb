@@ -1,0 +1,5 @@
+<% if haiku.field.status == "finished"%>
+  <div class="haiku__display">
+    <h2 class="haiku"><%= link_to haiku.content, field_haiku_path(haiku.field.id, haiku.id) %></h2>
+  </div>
+<% end %>

@@ -66,9 +66,7 @@
       <h2 class="field-heading">
         <%= "#{@user.name} 様の作品"%>
       </h2>
-      <div class="user__card">
-        <%= render partial: 'field', collection: @haikus, as: 'haiku'%>
-      </div>
+      <%= render partial: 'shared/haiku_card', collection: @haikus, as: 'haiku'%>
     </div>
   </div>
 </div>

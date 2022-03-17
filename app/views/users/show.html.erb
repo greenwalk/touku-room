@@ -1,9 +1,10 @@
 <div class="main">
   <div class="inner">
     <div class="user__wrapper">
-      <h2 class="field-heading">
-        <%= "ユーザー情報" %>
-      </h2>
+      <div class="past-field-heading">
+        <h2 class="past_page_heading"><%= link_to "ユーザー情報", edit_user_path(current_user.id) %></h2>
+        <%= link_to image_tag("link_allow.jpg", class: :img__link__allow), edit_user_path(current_user.id), class: :link__allow %>
+      </div>
       <table class="table">
         <tbody>
           <tr class="tr">
@@ -22,9 +23,6 @@
           <% end %>
         </tbody>
       </table>
-      <% if user_signed_in? && @user.id == current_user.id%>
-        <%= link_to "プロフィールを編集", edit_user_path(current_user.id), class: :prof__nav__btn %>
-      <% end%>
       <h2 class="field-heading">
         <%= "#{@user.name} 様の成績"%>
       </h2>

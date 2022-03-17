@@ -2,8 +2,12 @@
   <div class="inner">
     <div class="user__wrapper">
       <div class="past-field-heading">
-        <h2 class="past_page_heading"><%= link_to "ユーザー情報", edit_user_path(current_user.id) %></h2>
-        <%= link_to image_tag("link_allow.jpg", class: :img__link__allow), edit_user_path(current_user.id), class: :link__allow %>
+        <% if user_signed_in? && @user.id == current_user.id%>
+          <h2 class="past_page_heading"><%= link_to "ユーザー情報", edit_user_path(current_user.id) %></h2>
+          <%= link_to image_tag("link_allow.jpg", class: :img__link__allow), edit_user_path(current_user.id), class: :link__allow %>
+        <% else %>
+          <h2 class="past_page_heading">ユーザー情報</h2>
+        <% end %>
       </div>
       <table class="table">
         <tbody>

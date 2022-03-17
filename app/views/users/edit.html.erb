@@ -24,6 +24,7 @@
 
         <div class="actions">
           <%= f.submit "変更保存", class: :form__btn  %>
+          <%= link_to "キャンセル", user_path(current_user.id), class: :cancel__nav__btn %> 
         </div>
       <% end %>
     </div>

@@ -384,10 +384,19 @@ a {
   margin-bottom: 3px;
   padding: 7px 0;
 }
+
 .vote__body{
   margin-left: 5px;
   font-size: 32px;
+  margin-right: -1px;
 }
+
+.vote__body:after {
+  content: '';
+  margin-right: 1px;
+  float: right; //
+}
+
 .vote_btn {
   height: 32px;
   margin: 0 10px;
@@ -682,10 +691,10 @@ a {
     font-size: 27px;
   }
   .vote__body{
-    font-size: 28px;
+    font-size: 32px;
   }
   .vote_btn {
-    height: 28px;
+    height: 32px;
   }
   .notice {
     width: 90%;

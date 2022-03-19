@@ -394,7 +394,7 @@ a {
 .vote__body:after {
   content: '';
   margin-right: 1px;
-  float: right; //
+  float: right;
 }
 
 .vote_btn {

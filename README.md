@@ -82,7 +82,6 @@ ER図は touku-room/touku-room.dio に記載。
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
 | content            | string     | null: false                    |
-| content_sub        | string     | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | field              | references | null: false, foreign_key: true |
 

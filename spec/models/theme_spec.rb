@@ -22,7 +22,7 @@ RSpec.describe Theme, type: :model do
         @theme.valid?
         expect(@theme.errors.full_messages).to include("お題画像に使用可能な拡張子は .png/.jpg/.jpeg のみです")
       end
-      it '季節が空では出品できない' do
+      it '季節が空では設定できない' do
         @theme.season_id = 1
         @theme.valid?
         expect(@theme.errors.full_messages).to include("季節を選択してください")

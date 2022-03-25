@@ -32,6 +32,11 @@ RSpec.describe Theme, type: :model do
         @theme.valid?
         expect(@theme.errors.full_messages).to include("Statusを入力してください")
       end
+      it 'userがひもづいていないと設置できない' do
+        @theme.user = nil
+        @theme.valid?
+        expect(@theme.errors.full_messages).to include("Userを入力してください")
+      end
     end
   end
 end

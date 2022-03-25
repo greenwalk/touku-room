@@ -27,6 +27,11 @@ RSpec.describe Theme, type: :model do
         @theme.valid?
         expect(@theme.errors.full_messages).to include("季節を選択してください")
       end
+      it 'ステータスが空では設定できない' do
+        @theme.status = nil
+        @theme.valid?
+        expect(@theme.errors.full_messages).to include("Statusを入力してください")
+      end
     end
   end
 end

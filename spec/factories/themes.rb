@@ -1,6 +1,7 @@
 FactoryBot.define do
   factory :theme do
     season_id           { rand(2..5) }
+    status              { rand(0..1) }
 
     association :user
 

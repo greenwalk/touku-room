@@ -31,17 +31,17 @@
                 <mxCell id="140" value="" style="shape=partialRectangle;collapsible=0;dropTarget=0;pointerEvents=0;fillColor=none;top=0;left=0;bottom=0;right=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="139" vertex="1">
                     <mxGeometry y="30" width="360" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="141" value="content    &#10;content_sub&#10;user       &#10;field      " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=0;overflow=hidden;align=left;spacingTop=0;spacing=2;fontFamily=Helvetica;spacingLeft=6;" parent="140" vertex="1">
+                <mxCell id="141" value="content    &#10;user       &#10;field      " style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;fontStyle=0;overflow=hidden;align=left;spacingTop=0;spacing=2;fontFamily=Helvetica;spacingLeft=6;" parent="140" vertex="1">
                     <mxGeometry width="90" height="80" as="geometry">
                         <mxRectangle width="90" height="80" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="142" value="string    &#10;string    &#10;references&#10;references" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;" parent="140" vertex="1">
+                <mxCell id="142" value="string     &#10;references&#10;references" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;" parent="140" vertex="1">
                     <mxGeometry x="90" width="70" height="80" as="geometry">
                         <mxRectangle width="70" height="80" as="alternateBounds"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="143" value="null: false                   &#10;null: false                   &#10;null: false, foreign_key: true&#10;null: false, foreign_key: true" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;" parent="140" vertex="1">
+                <mxCell id="143" value="null: false                                    &#10;null: false, foreign_key: true&#10;null: false, foreign_key: true" style="shape=partialRectangle;connectable=0;fillColor=none;top=0;left=0;bottom=0;right=0;align=left;spacingLeft=6;fontStyle=0;overflow=hidden;" parent="140" vertex="1">
                     <mxGeometry x="160" width="200" height="80" as="geometry">
                         <mxRectangle width="200" height="80" as="alternateBounds"/>
                     </mxGeometry>

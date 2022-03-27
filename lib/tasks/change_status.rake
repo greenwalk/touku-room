@@ -22,8 +22,10 @@ namespace :change_status do
   task chage_field_status: :environment do
     logger = Logger.new 'log/cron.log'
 
+    # "投句期間のFieldを取得"
     fields = Field.where(status: 'touku')
     touku_field = fields.order(updated_at: :desc)[-1]
+    # "ステータスを投票期間に更新"
     touku_field.update(status: 'voting')
   end
 end

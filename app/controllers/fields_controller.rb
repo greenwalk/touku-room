@@ -2,6 +2,7 @@ class FieldsController < ApplicationController
   before_action :field_set, only: [:show]
 
   def index
+    # 現在の俳句のステータスによって取得するfieldを選択
     if Field.exists?(status: 'touku')
       fields = Field.where(status: 'touku')
     elsif Field.exists?(status: 'voting')

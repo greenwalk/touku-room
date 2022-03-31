@@ -31,6 +31,7 @@ class UsersController < ApplicationController
     redirect_to root_path unless current_user.id == @user.id
   end
 
+  # 俳句を投稿したfieldに投票した投票者の数をカウント
   def votes_count(haikus)
     @total_votes = 0
     @total_votes_num = 0

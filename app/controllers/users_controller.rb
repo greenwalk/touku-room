@@ -35,6 +35,7 @@ class UsersController < ApplicationController
   def votes_count(haikus)
     @total_votes = 0
     @total_votes_num = 0
+    # 自分が投稿した俳句からそれに紐づくfieldを抽出
     haikus.each do |haiku|
       votes_ary = []
       haiku.field.haikus.each do |haiku2|

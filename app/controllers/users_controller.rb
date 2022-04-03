@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     # 自分が投稿した俳句からそれに紐づくfieldを抽出
     haikus.each do |haiku|
       votes_ary = []
+      # 抽出されたfieldにある俳句の全投票を配列に格納
       haiku.field.haikus.each do |haiku2|
         votes_ary << haiku2.votes.pluck(:user_id)
       end

@@ -35,13 +35,14 @@ class UsersController < ApplicationController
   def votes_count(haikus)
     @total_votes = 0
     @total_votes_num = 0
-    # 自分が投稿した俳句からそれに紐づくfieldを抽出
+    # ユーザーが投稿したhaikuをひとつずつ抽出
     haikus.each do |haiku|
       votes_ary = []
-      # 抽出されたfieldにある俳句の全投票を配列に格納
+      # 抽出されたhaikuが投稿されたfieldにある全俳句の全投票者を配列に格納
       haiku.field.haikus.each do |haiku2|
         votes_ary << haiku2.votes.pluck(:user_id)
       end
+      # それぞれ格納した投票をひとつの配列とし、user_idの重複を消し、その配列のサイズをそのfieldでの投票者数とする
       votes_num = votes_ary.flatten.uniq.size
       @total_votes_num += votes_num
       @total_votes += haiku.votes.size

@@ -45,6 +45,7 @@ class UsersController < ApplicationController
       # それぞれ格納した投票をひとつの配列とし、user_idの重複を消し、その配列のサイズをそのfieldでの投票者数とする
       votes_num = votes_ary.flatten.uniq.size
       @total_votes_num += votes_num
+      # 抽出された俳句が獲得した票数を加算
       @total_votes += haiku.votes.size
     end
   end

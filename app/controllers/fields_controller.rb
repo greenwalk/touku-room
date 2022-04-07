@@ -14,8 +14,10 @@ class FieldsController < ApplicationController
   end
 
   def show
+    # 投票画面ではランダム順で俳句を表示
     if @field.status == 'voting'
       @haikus = @field.haikus.shuffle
+    # 結果画面では得票数順で俳句を表示
     elsif @field.status == 'finished'
       @haikus = @field.haikus.sort { |a, b| b.votes.size <=> a.votes.size }
     else

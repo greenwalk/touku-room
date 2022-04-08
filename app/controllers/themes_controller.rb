@@ -4,6 +4,7 @@ class ThemesController < ApplicationController
   before_action :move_to_top, only: [:edit]
 
   def new
+    # 使われていないお題がある場合は、それを表示。ない場合は、投稿画面へ。
     themes = current_user.themes.where(status: 'set')
     @theme = if themes.exists?
                themes.order(updated_at: :desc)[-1]
